@@ -1,0 +1,62 @@
+.wrap { position: relative; z-index: 10; margin-top: -88px; }
+.card {
+  background: var(--white); border-radius: 22px; padding: 22px 26px;
+  border: 1px solid var(--line); box-shadow: 0 30px 70px -30px rgba(11, 31, 75, .35);
+}
+
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.tab {
+  display: inline-flex; align-items: center; gap: 8px; border: 0; cursor: pointer;
+  padding: 8px 18px; border-radius: 10px; font-weight: 600; font-size: 15px;
+  background: var(--surface); color: var(--ink-2); transition: background .15s;
+}
+.tab:hover { background: var(--surface-hover); }
+.tab.active { background: var(--navy-ink); color: var(--white); }
+
+.fields { display: grid; grid-template-columns: 1.1fr 1.25fr 1.25fr .85fr auto; gap: 14px; margin: 0; padding: 0; border: 0; min-width: 0; }
+.fields:disabled { opacity: .55; }
+.fields:disabled .field { cursor: not-allowed; }
+.field {
+  display: flex; flex-direction: column; gap: 2px; min-width: 0; padding: 10px 16px; border-radius: 12px;
+  border: 1.5px solid var(--line); cursor: text; transition: border-color .15s, box-shadow .15s;
+}
+.field:focus-within { border-color: var(--sky); box-shadow: 0 0 0 4px rgba(31, 91, 255, .12); }
+.label { font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-2); }
+.control { display: flex; align-items: center; gap: 10px; }
+.days { color: var(--sky); text-transform: none; letter-spacing: 0; font-weight: 700; }
+.icon { color: var(--muted); flex: none; }
+.iconBlue { color: var(--sky); flex: none; }
+.control input, .control select {
+  width: 100%; min-width: 0; padding: 0; border: 0; outline: 0; background: transparent;
+  font-size: 17px; font-weight: 600; color: var(--ink); appearance: none; cursor: pointer;
+}
+.control input[type="datetime-local"] { font-size: 16px; }
+/* Our calendar icon replaces the browser's; clicking the field opens the picker (see openPicker). */
+.control input[type="datetime-local"]::-webkit-calendar-picker-indicator { display: none; }
+.control input::placeholder { color: #9AA3B5; font-weight: 500; }
+.control input:focus-visible, .control select:focus-visible { outline: none; }
+
+.submit { font-size: 18px; padding: 0 28px; border-radius: 12px; min-height: 66px; }
+
+.error, .notice {
+  display: flex; align-items: center; gap: 8px; margin-top: 14px; padding: 10px 14px; border-radius: 10px; font-size: 15px; font-weight: 500;
+}
+.error { background: #FEF2F2; color: #B91C1C; border: 1px solid #FECACA; }
+.notice { background: #FFF8E6; color: #7A5A00; border: 1px solid #FBE7B0; flex-wrap: wrap; }
+.noticeLink { font-weight: 700; color: var(--navy-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; margin-top: 14px; color: var(--muted); font-size: 14px; }
+.foot strong { color: var(--ink); }
+.secure { display: inline-flex; align-items: center; gap: 6px; }
+
+@media (max-width: 1100px) {
+  .fields { grid-template-columns: 1fr 1fr; }
+  .airport, .submit { grid-column: 1 / -1; }
+  .submit { min-height: 56px; }
+}
+
+@media (max-width: 640px) {
+  .card { padding: 18px; }
+  .fields { grid-template-columns: 1fr; }
+  .control input, .control select { font-size: 16px; }
+}

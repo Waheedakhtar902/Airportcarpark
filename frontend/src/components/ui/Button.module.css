@@ -1,0 +1,16 @@
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: .4em;
+  border: 0; cursor: pointer; font-weight: 700; border-radius: 12px; white-space: nowrap;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:disabled { opacity: .7; cursor: progress; transform: none; }
+
+.amber { background: var(--amber); color: var(--navy-ink); box-shadow: 0 8px 20px -8px rgba(255, 188, 0, .6); }
+.amber:hover { background: var(--amber-soft); }
+.navy { background: var(--navy-ink); color: var(--white); }
+.navy:hover { background: var(--navy); }
+
+.sm { padding: 9px 18px; font-size: 15px; }
+.md { padding: 14px 24px; font-size: 16px; }
+.lg { padding: 16px 28px; font-size: 18px; }

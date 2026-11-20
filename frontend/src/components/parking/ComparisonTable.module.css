@@ -1,0 +1,40 @@
+.section { padding: 100px 0; background: var(--surface); scroll-margin-top: 20px; }
+
+.scroller {
+  overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius-lg);
+  background: var(--white); box-shadow: var(--shadow-sm);
+}
+.scroller:focus-visible { outline: 3px solid var(--sky); outline-offset: 2px; }
+
+.table { width: 100%; min-width: 820px; border-collapse: collapse; text-align: left; }
+.table th, .table td { padding: 18px 22px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.table tbody tr:last-child th, .table tbody tr:last-child td { border-bottom: 0; }
+
+.table thead th { background: var(--cloud); vertical-align: top; }
+.corner { width: 20%; }
+.table tbody th { font-weight: 600; color: var(--ink-2); background: var(--cloud); width: 20%; }
+.table td { color: var(--muted); }
+.table td strong { font-family: var(--font-display); font-size: 19px; color: var(--ink); letter-spacing: -0.02em; }
+
+.headLink { display: flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 18px; font-weight: 700; color: var(--ink); }
+.headLink:hover { color: var(--sky); }
+.headIcon { width: 38px; height: 38px; flex: none; border-radius: 10px; display: grid; place-items: center; background: #E8F0FF; color: var(--sky); }
+
+.currentHead { background: var(--navy) !important; }
+.currentHead .headLink { color: var(--white); }
+.currentHead .headIcon { background: rgba(255, 255, 255, .12); color: var(--amber); }
+.here {
+  display: inline-block; margin-top: 10px; padding: 2px 10px; border-radius: 999px;
+  background: var(--amber); color: var(--navy-ink); font-size: 11.5px; font-weight: 800; letter-spacing: .05em; text-transform: uppercase;
+}
+.currentCell { background: #EEF3FF; color: var(--ink) !important; font-weight: 500; }
+
+/* Keep the row labels in view while the table scrolls sideways. */
+.corner, .table tbody th { position: sticky; left: 0; z-index: 1; box-shadow: 1px 0 0 var(--line); }
+
+@media (max-width: 640px) {
+  .section { padding: 70px 0; }
+  .table { min-width: 720px; }
+  .table th, .table td { padding: 14px 16px; }
+  .corner, .table tbody th { width: 120px; }
+}

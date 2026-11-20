@@ -1,0 +1,35 @@
+.section { padding: 100px 0; }
+.surface { background: var(--surface); }
+.steps {
+  --cols: 3;
+  position: relative; display: grid; grid-template-columns: repeat(var(--cols), 1fr);
+  gap: 40px; margin-top: 60px; text-align: center;
+}
+/* Dashed line between the step circles: from the centre of the first column to the centre of the last. */
+.steps::before {
+  content: ""; position: absolute; top: 53px;
+  left: calc(50% / var(--cols)); right: calc(50% / var(--cols));
+  border-top: 2px dashed #C9D4EA;
+}
+.step { position: relative; }
+.step h3 { font-size: 26px; font-weight: 700; margin-bottom: 14px; }
+.step p { color: var(--muted); font-size: 18px; max-width: 380px; margin-inline: auto; }
+
+.num {
+  position: relative; isolation: isolate; display: grid; place-items: center;
+  width: 106px; height: 106px; margin: 0 auto 22px; border-radius: 50%;
+  background: var(--white); border: 1px solid var(--line);
+  font-family: var(--font-display); font-size: 34px; font-weight: 700; color: var(--navy-ink);
+}
+.num::before { content: ""; position: absolute; inset: 11px; z-index: -1; border-radius: 50%; background: var(--amber); }
+
+@media (max-width: 1100px) {
+  .four { grid-template-columns: repeat(2, 1fr); row-gap: 50px; }
+  .four::before { display: none; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 70px 0; }
+  .steps { grid-template-columns: 1fr; gap: 50px; margin-top: 30px; }
+  .steps::before { display: none; }
+}

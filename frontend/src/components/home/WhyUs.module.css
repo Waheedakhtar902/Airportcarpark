@@ -1,0 +1,16 @@
+.section { padding: 20px 0 100px; }
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+
+.features { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 50px; margin-top: 44px; }
+.features h3 { font-size: 21px; font-weight: 700; margin-bottom: 8px; }
+.features p { color: var(--muted); }
+.icon { width: 52px; height: 52px; border-radius: 13px; display: grid; place-items: center; background: #FFF4D6; color: #B7791F; margin-bottom: 20px; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 50px; }
+}
+
+@media (max-width: 640px) {
+  .section { padding-bottom: 70px; }
+  .features { grid-template-columns: 1fr; gap: 28px; }
+}

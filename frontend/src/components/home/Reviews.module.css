@@ -1,0 +1,23 @@
+.section { padding: 100px 0; background: var(--navy); color: var(--white); }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+.card { padding: 30px 32px; border-radius: var(--radius-lg); background: rgba(255, 255, 255, .05); border: 1px solid rgba(255, 255, 255, .1); }
+.stars { display: flex; gap: 5px; color: var(--amber); }
+.card blockquote { margin: 18px 0 26px; font-size: 18px; color: #DCE3F2; }
+.card figcaption { display: flex; align-items: center; gap: 14px; }
+.card strong { display: block; }
+.card small { color: var(--muted-on-dark); font-size: 15px; }
+.avatar { width: 52px; height: 52px; flex: none; border-radius: 50%; display: grid; place-items: center; font-weight: 800; color: var(--navy-ink); }
+
+.note {
+  display: inline-block; margin-top: 26px; padding: 3px 10px; border-radius: 6px;
+  border: 1px dashed rgba(255, 255, 255, .25); color: var(--muted-on-dark); font-size: 13px;
+}
+
+@media (max-width: 960px) {
+  .grid { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 70px 0; }
+}

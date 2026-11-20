@@ -1,0 +1,36 @@
+/* Brand palette — color-pallete.jpeg */
+:root {
+  --navy: #0B1F4B;          /* Night Navy */
+  --sky: #1F5BFF;           /* Sky Blue */
+  --amber: #FFBC00;         /* Amber */
+  --cloud: #F7F8FB;         /* Cloud */
+
+  --navy-deep: #08142F;
+  --navy-ink: #0B1733;
+  --navy-raised: #16295A;
+  --amber-soft: #FFC93C;
+  --logo-orange: #F7941D;
+  --surface: #F2F4F8;
+  --surface-hover: #E8ECF4;
+  --white: #FFFFFF;
+  --ink: #0F172A;
+  --ink-2: #3A4359;
+  --muted: #5B6478;
+  --muted-on-dark: #AFBAD4;
+  --line: #E4E8F0;
+  --green: #16A34A;
+  --green-soft: #DCFCE7;
+
+  --radius-sm: 10px;
+  --radius: 16px;
+  --radius-lg: 22px;
+  --radius-xl: 28px;
+  --shadow: 0 20px 50px -20px rgba(11, 31, 75, .25);
+  --shadow-sm: 0 6px 20px -10px rgba(11, 31, 75, .2);
+
+  --font: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Inter Tight", "Inter", system-ui, sans-serif;
+
+  --container: 1180px;
+  --gutter: 16px;
+}

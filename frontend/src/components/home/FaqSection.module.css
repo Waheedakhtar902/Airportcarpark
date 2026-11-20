@@ -1,0 +1,33 @@
+.section { padding: 100px 0; scroll-margin-top: 20px; }
+.layout { display: grid; grid-template-columns: 1fr 1.5fr; gap: 80px; align-items: start; }
+
+.eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--sky); margin-bottom: 14px; }
+.title { font-size: clamp(32px, 4vw, 50px); font-weight: 800; margin-bottom: 18px; }
+.intro { font-size: 18px; color: var(--muted); }
+
+.help { margin-top: 40px; padding: 34px; border-radius: var(--radius-lg); background: var(--surface); }
+.help h3 { font-size: 21px; font-weight: 700; margin-bottom: 4px; }
+.help p { color: var(--muted); margin-bottom: 20px; }
+
+.list { border-top: 1px solid var(--line); }
+.item { border-bottom: 1px solid var(--line); }
+.item h3 { margin: 0; }
+.question {
+  width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 20px;
+  padding: 26px 0; border: 0; background: none; cursor: pointer; text-align: left;
+  font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--ink);
+  transition: color .15s;
+}
+.question:hover { color: var(--sky); }
+.question svg { flex: none; color: var(--sky); }
+.answer p { padding: 0 40px 26px 0; color: var(--muted); font-size: 17px; }
+
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; gap: 50px; }
+}
+
+@media (max-width: 640px) {
+  .section { padding: 70px 0; }
+  .question { font-size: 18px; padding: 20px 0; }
+  .answer p { padding-right: 0; }
+}

@@ -1,0 +1,10 @@
+.bar { background: var(--navy-deep); color: #C9D2E6; font-size: 13.5px; border-bottom: 1px solid rgba(255, 255, 255, .06); }
+.inner { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; }
+.offer { display: flex; align-items: center; gap: 8px; }
+.offer strong { color: var(--amber); font-weight: 700; }
+.icon { color: var(--amber); flex: none; }
+
+@media (max-width: 640px) {
+  .right { display: none; }
+  .inner { justify-content: center; text-align: center; }
+}

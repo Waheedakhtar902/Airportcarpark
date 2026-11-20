@@ -1,0 +1,52 @@
+.hero {
+  position: relative; overflow: hidden; color: var(--white);
+  background:
+    radial-gradient(1000px 600px at 75% 30%, rgba(31, 91, 255, .25), transparent 60%),
+    linear-gradient(160deg, #0E2457 0%, var(--navy) 55%, #0D2252 100%);
+  padding: 146px 0 112px; /* top clears the overlaid header */
+}
+.grid {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, #000 60%, transparent);
+}
+.body { position: relative; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; }
+
+.pill {
+  display: inline-block; padding: 5px 13px; border-radius: 999px; font-size: 13.5px; font-weight: 600;
+  color: var(--amber); background: rgba(255, 188, 0, .12); border: 1px solid rgba(255, 188, 0, .18);
+}
+.soon {
+  display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px;
+  background: var(--amber); color: var(--navy-ink); border-color: var(--amber);
+  font-weight: 800; letter-spacing: .08em; text-transform: uppercase; font-size: 12.5px;
+  box-shadow: 0 8px 24px -8px rgba(255, 188, 0, .6);
+}
+.dot { position: relative; width: 8px; height: 8px; border-radius: 50%; background: var(--navy-ink); }
+.dot::after {
+  content: ""; position: absolute; inset: 0; border-radius: 50%; background: var(--navy-ink);
+  animation: ping 1.6s ease-out infinite;
+}
+@keyframes ping { 70%, 100% { transform: scale(2.4); opacity: 0; } }
+
+.title { font-size: clamp(34px, 4.3vw, 58px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.06; margin: 18px 0 16px; }
+.lead { font-size: 17px; color: #C4CDE2; max-width: 540px; }
+.ticks { display: flex; flex-wrap: wrap; gap: 10px 24px; margin-top: 22px; font-size: 15px; color: #E3E8F4; }
+.ticks li { display: flex; align-items: center; gap: 10px; }
+.tick {
+  width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center;
+  background: rgba(255, 188, 0, .18); color: var(--amber);
+}
+
+@media (max-width: 900px) {
+  .hero { padding-top: 140px; }
+  .body { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 132px 0 104px; }
+  .lead { font-size: 16px; }
+}

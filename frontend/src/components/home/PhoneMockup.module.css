@@ -1,0 +1,50 @@
+.art {
+  position: relative; display: grid; place-items: center; min-height: 560px;
+  border-radius: var(--radius-xl); overflow: hidden;
+  background: linear-gradient(145deg, #0E2152 0%, #1B3A7C 100%);
+}
+.art::before {
+  content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -200px;
+  border-radius: 50%; background: rgba(255, 255, 255, .07);
+}
+.art::after {
+  content: ""; position: absolute; width: 480px; height: 480px; left: -200px; bottom: -260px;
+  border-radius: 50%; background: rgba(31, 91, 255, .25);
+}
+
+.phone {
+  position: relative; z-index: 1; width: 270px; padding: 18px 22px 22px; border-radius: 34px;
+  background: var(--white); color: var(--ink); border: 12px solid #0A1636;
+  box-shadow: 0 0 0 4px #2D4A8F, 0 40px 80px -20px rgba(0, 0, 0, .6);
+}
+.notch { width: 70px; height: 8px; border-radius: 6px; background: #E1E6F0; margin: 0 auto 26px; }
+.phone h4 { font-size: 21px; margin-bottom: 14px; }
+
+.ticket { padding: 18px; border-radius: 16px; background: var(--navy-ink); color: var(--white); }
+.ticket small { display: block; font-size: 12px; color: var(--muted-on-dark); }
+.ticket strong { display: block; margin: 4px 0; font-family: var(--font-display); font-size: 23px; letter-spacing: -0.02em; }
+.ticket span { font-size: 12.5px; color: #DCE3F2; }
+.ticket i { display: block; width: 80px; height: 9px; margin-top: 10px; border-radius: 6px; background: var(--amber); }
+
+.label { display: block; margin-top: 22px; font-size: 12.5px; color: var(--muted); }
+.ref { font-family: var(--font-display); font-size: 20px; letter-spacing: -0.02em; }
+
+.qr {
+  display: grid; grid-template-columns: repeat(6, 1fr); grid-template-rows: repeat(6, 1fr); gap: 4px;
+  width: 128px; height: 128px; margin: 14px auto 18px; padding: 14px; border-radius: 12px; background: var(--surface);
+}
+.qr span { background: var(--navy-ink); }
+.bar { height: 12px; border-radius: 6px; background: #E1E6F0; }
+
+.tag { position: absolute; z-index: 2; padding: 12px 20px; border-radius: 14px; box-shadow: 0 20px 40px -15px rgba(0, 0, 0, .45); }
+.tag small { display: block; font-size: 12.5px; }
+.tag strong { display: flex; align-items: center; gap: 4px; font-family: var(--font-display); font-size: 17px; }
+.flight { top: 64%; left: 2%; background: var(--white); }
+.flight small { color: var(--muted); }
+.ready { right: 5%; bottom: 24%; background: var(--amber); color: var(--navy-ink); animation: bob 5s ease-in-out infinite; }
+
+@media (max-width: 640px) {
+  .art { min-height: 520px; }
+  .flight { left: 4%; top: 2%; }
+  .ready { right: 4%; bottom: 8%; }
+}

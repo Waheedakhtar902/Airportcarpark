@@ -1,0 +1,17 @@
+.head { margin-bottom: 48px; }
+.split { display: grid; grid-template-columns: 1fr minmax(0, 480px); gap: 24px 60px; align-items: end; }
+.center { text-align: center; }
+.stack { margin-bottom: 0; }
+.stack .title { margin-bottom: 20px; }
+
+.eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--sky); margin-bottom: 14px; }
+.title { font-size: clamp(32px, 4vw, 50px); font-weight: 800; }
+.intro { font-size: 18px; color: var(--muted); }
+
+.dark .eyebrow { color: var(--amber); }
+.dark .title { color: var(--white); }
+.dark .intro { color: var(--muted-on-dark); }
+
+@media (max-width: 900px) {
+  .split { grid-template-columns: 1fr; }
+}

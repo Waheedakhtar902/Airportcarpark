@@ -1,0 +1,46 @@
+.nav { position: relative; display: flex; align-items: center; gap: 32px; padding: 20px 0; color: var(--white); }
+
+.links { display: flex; gap: 36px; margin-inline: auto; font-weight: 500; color: #E3E8F4; }
+.links > li > a { position: relative; white-space: nowrap; transition: color .15s; }
+.links > li > a:hover { color: var(--amber); }
+.badge {
+  /* Pinned to the link's top-right corner so it adds no width to the menu. */
+  position: absolute; top: -18px; right: -20px; padding: 1px 6px; border-radius: 999px; line-height: 1.4;
+  background: rgba(255, 188, 0, .16); color: var(--amber); border: 1px solid rgba(255, 188, 0, .35);
+  font-size: 10px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase;
+}
+
+.actions { display: flex; align-items: center; gap: 18px; }
+.manage { font-weight: 600; white-space: nowrap; transition: color .15s; }
+.manage:hover { color: var(--amber); }
+
+.mobileOnly { display: none; }
+
+.toggle { display: none; background: none; border: 0; padding: 6px; color: var(--white); cursor: pointer; }
+
+@media (max-width: 1100px) {
+  .links { gap: 22px; font-size: 15px; }
+  /* Not enough room for it here; it's in the mobile menu and the footer. */
+  .manage { display: none; }
+}
+
+@media (max-width: 900px) {
+  .nav { justify-content: space-between; }
+  .links {
+    position: absolute; top: 100%; left: 0; right: 0; z-index: 30; display: none;
+    flex-direction: column; gap: 0; margin: 0; padding: 10px; border-radius: 16px;
+    background: var(--navy-deep); box-shadow: 0 20px 40px rgba(0, 0, 0, .4);
+    max-height: calc(100dvh - 140px); overflow-y: auto; overscroll-behavior: contain;
+  }
+  .links.open { display: flex; }
+  .links > li > a { display: block; padding: 12px 16px; border-radius: 10px; }
+  .badge { position: static; display: inline-block; margin-left: 8px; vertical-align: 2px; }
+  .links > li > a:hover { background: rgba(255, 255, 255, .06); }
+  .mobileOnly { display: block; margin-top: 6px; padding-top: 6px; border-top: 1px solid rgba(255, 255, 255, .08); }
+  .toggle { display: block; }
+  .manage { display: none; }
+}
+
+@media (max-width: 640px) {
+  .signIn { display: none; }
+}
