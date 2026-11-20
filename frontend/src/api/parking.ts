@@ -1,6 +1,6 @@
 /**
- * Client for our own /api/parking/products endpoint, which proxies the Quick Access Parking API
- * server-side (see server/parkingApi.ts). No API key is ever used in the browser.
+ * Client for our own /api/parking/products endpoint, served by backend/ (see backend/src/routes/parking.ts),
+ * which calls the Quick Access Parking API server-side. The frontend holds no API keys.
  */
 import { toApiDate, type ParkingSearch } from '@/lib/search';
 

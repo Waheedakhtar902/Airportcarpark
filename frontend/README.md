@@ -4,17 +4,15 @@ React 19 + TypeScript + Vite. Styling with CSS Modules, icons from Lucide.
 
 ## Setup
 
-Copy `.env.example` to `.env` and add the Quick Access Parking API key. `.env` is git-ignored.
-The key is read only by the server-side proxy and never reaches the browser.
+The frontend has no secrets and needs no `.env`. Parking prices come from the API in `backend/`,
+so run the backend too (see `backend/README.md`).
 
-## Parking prices (Quick Access Parking API)
+## Parking prices
 
-- The browser calls our own `GET /api/parking/products?airport=MAN&departure=dd-mm-YYYY hh:mm&arrival=…[&discount_code=…][&sku=…]`.
-- `server/parkingApi.ts` adds the API key and forwards to QAP (`/products/` for all, `/product/` for one SKU).
-  It validates input, allows Manchester (MAN) only, times out after 15 s and caches identical searches for 60 s
-  (QAP allows 120 requests a minute).
-- The proxy currently runs inside `vite` (dev) and `vite preview`. **For production, `backend/` must serve the same
-  route**; the frontend does not need to change.
+- The browser calls `GET /api/parking/products?…` on the same origin.
+- In development, Vite forwards `/api` to the backend at `http://127.0.0.1:4000`
+  (override with the `API_PROXY_TARGET` environment variable).
+- In production, serve `dist/` and route `/api` to the backend from the same domain (e.g. with a reverse proxy).
 - Product HTML from the API (features, overview, procedures, terms) is sanitised with DOMPurify before display.
 
 ## Commands
